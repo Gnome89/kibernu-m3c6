@@ -1,0 +1,185 @@
+/* =========================================
+   3. MODULE (Componentes Reutilizables)
+   Botones, Tarjetas, Navs, Heros.
+   ========================================= */
+
+/* --- Módulo: Brand --- */
+.brand {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3e2723;
+}
+
+/* --- Módulo: Nav --- */
+.nav-link {
+  margin-left: 20px;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #d32f2f; /* Rojo suave */
+}
+
+/* --- Módulo: Button --- */
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* Subclase de modulo (Variante) */
+.btn-primary {
+  background-color: #3e2723;
+  color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #5d4037;
+}
+
+.btn-small {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #3e2723;
+      color: #3e2723;
+    margin-top: 1rem;
+}
+
+.btn-small:hover {
+    background-color: #3e2723;
+    color: #fff;
+}
+
+/* --- Módulo: Hero --- */
+.hero {
+  background:
+    linear-gradient(rgba(62, 39, 35, 0.8), rgba(62, 39, 35, 0.6)),
+    url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 8rem 0;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+/* Module Card */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    text-align: center;
+    position: relative;
+    border: 1px solid #efebe9;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    color: #3e2723;
+}
+
+.card-desc {
+    color: #795548;
+    font-size: 0.95rem;
+}
+
+/* Elemento interno del módulo */
+.card-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #d32f2f;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* --- Módulo: Slider --- */
+.slider {
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  gap: 1rem;
+  animation: slide 15s infinite linear;
+}
+
+.slider img {
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Animación */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* --- Módulo: Testimonial --- */
+.testimonial {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  font-style: italic;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Módulo: Form --- */
+.form {
+  display: grid;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+.form input,
+.form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
