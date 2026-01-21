@@ -1,185 +1,278 @@
-/* =========================================
-   3. MODULE (Componentes Reutilizables)
-   Botones, Tarjetas, Navs, Heros.
-   ========================================= */
+/* =========================
+MODULE.CSS
+========================= */
 
-/* --- Módulo: Brand --- */
-.brand {
-  font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #3e2723;
+/* ---------- HEADER ---------- */
+
+.header {
+    background-color: var(--color-coffee-900);
+    color: var(--color-paper);
 }
 
-/* --- Módulo: Nav --- */
-.nav-link {
-  margin-left: 20px;
-  font-weight: 700;
-  transition: color 0.3s;
+.header--large {
+    padding: 1.8rem 0;
 }
 
-.nav-link:hover {
-  color: #d32f2f; /* Rojo suave */
-}
-
-/* --- Módulo: Button --- */
-.btn {
-  display: inline-block;
-  padding: 10px 25px;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-}
-
-/* Subclase de modulo (Variante) */
-.btn-primary {
-  background-color: #3e2723;
-  color: #fff;
-}
-
-.btn-primary:hover {
-    background-color: #5d4037;
-}
-
-.btn-small {
-  padding: 8px 16px;
-  background: transparent;
-  border: 1px solid #3e2723;
-      color: #3e2723;
-    margin-top: 1rem;
-}
-
-.btn-small:hover {
-    background-color: #3e2723;
-    color: #fff;
-}
-
-/* --- Módulo: Hero --- */
-.hero {
-  background:
-    linear-gradient(rgba(62, 39, 35, 0.8), rgba(62, 39, 35, 0.6)),
-    url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');;
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  text-align: center;
-  padding: 8rem 0;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    font-weight: 300;
-}
-
-/* Module Card */
-.card {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    text-align: center;
-    position: relative;
-    border: 1px solid #efebe9;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card-image {
-    height: 150px;
+.header__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    color: #fff;
+    justify-content: space-between;
 }
 
-.card-content {
-    padding: 2rem;
+.header__brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-.card-title {
-    font-size: 1.4rem;
-    color: #3e2723;
+.header__logo {
+    width: 64px;
+    height: auto;
 }
 
-.card-desc {
-    color: #795548;
-    font-size: 0.95rem;
+.header__name {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
 }
 
-/* Elemento interno del módulo */
-.card-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #d32f2f;
-    color: white;
-    padding: 5px 10px;
-    font-size: 0.7rem;
-    border-radius: 4px;
+.header__menu {
+    display: flex;
+    gap: 3rem;
+}
+
+.header__link {
+    font-size: 0.9rem;
     text-transform: uppercase;
-    font-weight: bold;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    position: relative;
 }
 
-/* --- Módulo: Slider --- */
-.slider {
-  overflow: hidden;
+.header__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-green-500);
+    transition: width 0.3s ease;
 }
 
-.slider-track {
-  display: flex;
-  gap: 1rem;
-  animation: slide 15s infinite linear;
+.header__link:hover::after {
+    width: 100%;
 }
 
-.slider img {
-  border-radius: 8px;
-  width: 100%;
-  max-width: 800px;
+.header__actions {
+    display: flex;
+    gap: 1rem;
 }
 
-/* Animación */
+.header__action {
+    background: transparent;
+    border: 2px solid var(--color-green-500);
+    color: var(--color-paper);
+    padding: 0.6rem 1rem;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("../fotos/01.jpg") center / cover no-repeat;
+    color: var(--color-paper);
+    text-align: center;
+}
+
+.hero--xl {
+    padding: 12rem 2rem;
+}
+
+.hero__title {
+    margin-bottom: 1.2rem;
+}
+
+.hero__subtitle {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+}
+
+.hero__actions {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.btn {
+    padding: 1.2rem 3.2rem;
+    border-radius: 40px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background-color: var(--color-green-700);
+    color: var(--color-paper);
+    border: none;
+}
+
+.btn--outline {
+    background: transparent;
+    border: 2px solid var(--color-paper);
+    color: var(--color-paper);
+}
+
+.btn--xl {
+    font-size: 0.9rem;
+}
+
+.btn--lg {
+    font-size: 0.85rem;
+}
+
+/* ---------- CAROUSEL ---------- */
+
+.carousel {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+    background-color: var(--color-ink);
+}
+
+.carousel__viewport {
+    overflow: hidden;
+}
+
+.carousel__track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: slide 45s linear infinite;
+    will-change: transform;
+}
+
+.carousel__img {
+    width: 420px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 22px;
+}
+
+/* LOOP REAL */
 @keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
 
-/* --- Módulo: Testimonial --- */
+/* ---------- SERVICES ---------- */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 3rem;
+}
+
+.service {
+    text-align: center;
+}
+
+.service__icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.service__title {
+    margin-bottom: 0.8rem;
+}
+
+/* ---------- MENU ---------- */
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px,1fr));
+    gap: 4rem;
+}
+
+.menu__group-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu__item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.15rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.2);
+}
+
+/* ---------- TESTIMONIALS ---------- */
+
+.testimonials {
+    display: grid;
+    gap: 2.5rem;
+}
+
 .testimonial {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  font-style: italic;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-size: 1.2rem;
+    font-style: italic;
 }
 
-/* --- Módulo: Form --- */
-.form {
-  display: grid;
-  gap: 1rem;
-  max-width: 500px;
+/* ---------- CONTACT ---------- */
+
+.contact {
+    display: grid;
+    gap: 1.4rem;
+    max-width: 600px;
 }
 
-.form input,
-.form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.contact__input {
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-green-300);
+    font-size: 1rem;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    background-color: var(--color-coffee-900);
+    color: var(--color-paper);
+}
+
+.footer__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.footer__columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer__brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.footer__copy {
+    text-align: center;
+    opacity: 0.8;
 }

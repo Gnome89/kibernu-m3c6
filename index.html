@@ -1,166 +1,250 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Aroma & Grano | Café de Especialidad en Santiago</title>
-    <meta name="description"
-        content="Aroma & Grano ofrece café de especialidad, granos seleccionados y una experiencia única en Santiago. Descubre nuestro menú y sucursales.">
+  <title>Aroma & Grano | Café de Especialidad</title>
+  <meta name="description" content="Aroma & Grano. Café de especialidad, pastelería artesanal y espacios urbanos." />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Aroma & Grano | Café de Especialidad">
-    <meta property="og:description" content="El arte del café en tu taza.">
-    <meta property="og:type" content="website">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link rel="stylesheet" href="assets/css/main.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
 
-    <header class="l-header">
-        <div class="l-container l-flex-between">
-            <div class="brand">Aroma & Grano</div>
+<!-- =====================================================
+HEADER / NAVBAR (GRANDE – BEM – PALETA VISIBLE)
+===================================================== -->
+<header class="header header--large">
+  <div class="header__container">
 
-            <nav class="nav">
-                <ul>
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                    <li><a href="#menu" class="nav-link">Menú</a></li>
-                    <li><a href="#opiniones" class="nav-link">Opiniones</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                    <li><a href="#sucursales" class="nav-link">Sucursales</a></li>
-                </ul>
-            </nav>
+    <div class="header__brand">
+      <img src="assets/fotos/LOGO.jpg" alt="Aroma & Grano" class="header__logo">
+      <span class="header__name">Aroma & Grano</span>
+    </div>
 
-        </div>
-    </header>
+    <nav class="header__nav">
+      <ul class="header__menu">
+        <li class="header__item"><a href="#inicio" class="header__link">Inicio</a></li>
+        <li class="header__item"><a href="#servicios" class="header__link">Servicios</a></li>
+        <li class="header__item"><a href="#menu" class="header__link">Menú</a></li>
+        <li class="header__item"><a href="#opiniones" class="header__link">Opiniones</a></li>
+        <li class="header__item"><a href="#contacto" class="header__link">Contacto</a></li>
+        <li class="header__item"><a href="#sucursales" class="header__link">Sucursales</a></li>
+      </ul>
+    </nav>
 
-    <section class="hero">
-        <div class="l-container">
-            <h1 class="hero-title">El arte del café en tu taza</h1>
-            <p class="hero-subtitle">Granos seleccionados de altura para exigentes.</p>
-            <a href="#" class="btn btn-primary">Ver Menú</a>
-            <a href="assets/docs/menu-cafeteria.pdf" class="btn btn-primary" download>
-                Descargar Menú
-            </a>
+    <div class="header__actions">
+      <button class="header__action" id="favBtn">❤ <span id="favCount">0</span></button>
+      <button class="header__action" id="cartBtn">🛒 <span id="cartCount">0</span></button>
+    </div>
 
-        </div>
-    </section>
+  </div>
+</header>
 
-    <main class="l-section">
-        <div class="l-container">
-            <h2 class="section-title">Nuestros Favoritos</h2>
+<!-- =====================================================
+HERO
+===================================================== -->
+<section id="inicio" class="hero hero--xl">
+  <div class="hero__content">
+    <h1 class="hero__title">Café que se vive</h1>
+    <p class="hero__subtitle">
+      Café de especialidad, diseño urbano y pastelería artesanal.
+    </p>
 
-            <section class="slider l-section">
-                <div class="l-container">
-                    <div class="slider-track">
-                        <img src="https://picsum.photos/800/400?1" alt="">
-                        <img src="https://picsum.photos/800/400?2" alt="">
-                        <img src="https://picsum.photos/800/400?3" alt="">
-                    </div>
-                </div>
-            </section>
+    <div class="hero__actions">
+      <a href="#menu" class="btn btn--primary btn--xl">Ver Menú</a>
+      <a href="assets/docs/menu-cafeteria.pdf" class="btn btn--outline btn--xl" download>Descargar Menú</a>
+    </div>
+  </div>
+</section>
 
+<!-- =====================================================
+CAROUSEL INFINITO REAL (LOOP CONTINUO)
+===================================================== -->
+<section class="carousel carousel--full">
+  <div class="carousel__viewport">
+    <div class="carousel__track">
 
-            <div class="l-grid-3">
+      <!-- SET A -->
+      <img src="assets/fotos/01.jpg" class="carousel__img" alt="">
+      <img src="assets/fotos/02.webp" class="carousel__img" alt="">
+      <img src="assets/fotos/03.webp" class="carousel__img" alt="">
+      <img src="assets/fotos/04.jpg" class="carousel__img" alt="">
+      <img src="assets/fotos/05.jpg" class="carousel__img" alt="">
+      <img src="assets/fotos/06.jpg" class="carousel__img" alt="">
+      <img src="assets/fotos/07.webp" class="carousel__img" alt="">
+      <img src="assets/fotos/08.webp" class="carousel__img" alt="">
+      <img src="assets/fotos/09.jpg" class="carousel__img" alt="">
+      <img src="assets/fotos/10.jpg" class="carousel__img" alt="">
+      <img src="assets/fotos/11.webp" class="carousel__img" alt="">
 
-                <article class="card">
-                    <div class="card-image" style="background-color: #d7ccc8;">☕</div>
-                    <div class="card-content">
-                        <h3 class="card-title">Espresso Romano</h3>
-                        <p class="card-desc">Intenso con un toque de limón siciliano.</p>
-                        <button class="btn btn-small">Pedir</button>
-                    </div>
-                </article>
+      <!-- SET B (DUPLICADO PARA LOOP PERFECTO) -->
+      <img src="assets/fotos/01.jpg" class="carousel__img" alt="">
+      <img src="assets/fotos/02.webp" class="carousel__img" alt="">
+      <img src="assets/fotos/03.webp" class="carousel__img" alt="">
+      <img src="assets/fotos/04.jpg" class="carousel__img" alt="">
+      <img src="assets/fotos/05.jpg" class="carousel__img" alt="">
+      <img src="assets/fotos/06.jpg" class="carousel__img" alt="">
+      <img src="assets/fotos/07.webp" class="carousel__img" alt="">
+      <img src="assets/fotos/08.webp" class="carousel__img" alt="">
+      <img src="assets/fotos/09.jpg" class="carousel__img" alt="">
+      <img src="assets/fotos/10.jpg" class="carousel__img" alt="">
+      <img src="assets/fotos/11.webp" class="carousel__img" alt="">
 
-                <article class="card is-highlighted">
-                    <div class="card-badge">Best Seller</div>
-                    <div class="card-image" style="background-color: #a1887f;">☕✨</div>
-                    <div class="card-content">
-                        <h3 class="card-title">Flat White</h3>
-                        <p class="card-desc">Doble shot con leche texturizada fina.</p>
-                        <button class="btn btn-small">Pedir</button>
-                    </div>
-                </article>
+    </div>
+  </div>
+</section>
 
-                <article class="card">
-                    <div class="card-image" style="background-color: #d7ccc8;">🧊</div>
-                    <div class="card-content">
-                        <h3 class="card-title">Cold Brew</h3>
-                        <p class="card-desc">Macerado en frío por 24 horas.</p>
-                        <button class="btn btn-small">Pedir</button>
-                    </div>
-                </article>
+<!-- =====================================================
+SERVICIOS
+===================================================== -->
+<section id="servicios" class="section section--lg">
+  <div class="section__container">
+    <h2 class="section__title">Servicios</h2>
 
-            </div>
+    <div class="services">
+      <article class="service">
+        <div class="service__icon">☕</div>
+        <h3 class="service__title">Café de Especialidad</h3>
+        <p class="service__desc">Granos seleccionados, tostado propio y extracción precisa.</p>
+      </article>
 
-            <section class="testimonials l-section">
-                <div class="l-container">
-                    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <article class="service">
+        <div class="service__icon">🥐</div>
+        <h3 class="service__title">Pastelería Artesanal</h3>
+        <p class="service__desc">Recetas propias, horneado diario y materias primas reales.</p>
+      </article>
 
-                    <div class="l-grid-3">
-                        <article class="testimonial">
-                            <p>“El mejor café que he probado en Santiago.”</p>
-                            <span>— María G.</span>
-                        </article>
+      <article class="service">
+        <div class="service__icon">🛍</div>
+        <h3 class="service__title">Take Away & Delivery</h3>
+        <p class="service__desc">Pensado para la ciudad y el ritmo urbano.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-                        <article class="testimonial">
-                            <p>“Excelente ambiente y atención.”</p>
-                            <span>— Carlos R.</span>
-                        </article>
+<!-- =====================================================
+MENÚ REAL (GRANDE)
+===================================================== -->
+<section id="menu" class="section section--xl section--dark">
+  <div class="section__container">
+    <h2 class="section__title section__title--light">Menú</h2>
 
-                        <article class="testimonial">
-                            <p>“Volvería todos los días.”</p>
-                            <span>— Sofía L.</span>
-                        </article>
-                    </div>
-                </div>
-            </section>
+    <div class="menu">
 
-            <section class="map l-section">
-                <div class="l-container">
-                    <h2 class="section-title">Nuestras Sucursales</h2>
+      <div class="menu__group">
+        <h3 class="menu__group-title">Café</h3>
+        <ul class="menu__list">
+          <li class="menu__item"><span>Espresso</span><span>$2.500</span></li>
+          <li class="menu__item"><span>Americano</span><span>$2.700</span></li>
+          <li class="menu__item"><span>Cappuccino</span><span>$3.100</span></li>
+          <li class="menu__item"><span>Latte</span><span>$3.000</span></li>
+          <li class="menu__item"><span>Flat White</span><span>$3.200</span></li>
+          <li class="menu__item"><span>Mocha</span><span>$3.400</span></li>
+        </ul>
+      </div>
 
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="350"
-                        style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
-                </div>
-            </section>
+      <div class="menu__group">
+        <h3 class="menu__group-title">Pastelería</h3>
+        <ul class="menu__list">
+          <li class="menu__item"><span>Croissant</span><span>$1.800</span></li>
+          <li class="menu__item"><span>Roll de Canela</span><span>$2.400</span></li>
+          <li class="menu__item"><span>Brownie</span><span>$2.600</span></li>
+          <li class="menu__item"><span>Torta del Día</span><span>$3.000</span></li>
+          <li class="menu__item"><span>Cheesecake</span><span>$3.200</span></li>
+        </ul>
+      </div>
 
+    </div>
+  </div>
+</section>
 
-            <section class="contact l-section">
-                <div class="l-container">
-                    <h2 class="section-title">Contáctanos</h2>
+<!-- =====================================================
+OPINIONES
+===================================================== -->
+<section id="opiniones" class="section section--lg">
+  <div class="section__container">
+    <h2 class="section__title">Opiniones</h2>
 
-                    <form class="form">
-                        <input type="text" placeholder="Nombre" required>
-                        <input type="email" placeholder="Correo" required>
-                        <textarea placeholder="Mensaje"></textarea>
-                        <button class="btn btn-primary">Enviar</button>
-                    </form>
-                </div>
-            </section>
+    <div class="testimonials">
+      <article class="testimonial">“El mejor café que he probado en Chile.” — María G.</article>
+      <article class="testimonial">“Diseño, calidad y ambiente real.” — Carlos R.</article>
+      <article class="testimonial">“Mi lugar fijo para trabajar.” — Sofía L.</article>
+    </div>
+  </div>
+</section>
 
+<!-- =====================================================
+SUCURSALES
+===================================================== -->
+<section id="sucursales" class="section section--lg section--map">
+  <div class="section__container">
+    <h2 class="section__title">Sucursales</h2>
 
-        </div>
-    </main>
+    <ul class="branches">
+      <li><strong>Casa Matriz:</strong> Av. Alameda 1234, Santiago</li>
+      <li>Santiago: Providencia, Ñuñoa, Las Condes, Vitacura, Centro</li>
+      <li>Valparaíso: Cerro Alegre, Plan</li>
+      <li>Viña del Mar: Centro, Reñaca, Miramar</li>
+      <li>La Serena: Avenida del Mar</li>
+      <li>Concepción: Centro, San Pedro, Barrio Universitario</li>
+    </ul>
 
-    <footer class="l-footer">
-        <footer class="l-footer">
-            <div class="l-container">
-                <p>&copy; 2024 Aroma & Grano. Pasión por el café.</p>
+    <iframe src="https://www.google.com/maps?q=Santiago%20Chile&output=embed" loading="lazy"></iframe>
+  </div>
+</section>
 
-            </div>
-        </footer>
+<!-- =====================================================
+CONTACTO
+===================================================== -->
+<section id="contacto" class="section section--lg section--light">
+  <div class="section__container">
+    <h2 class="section__title">Contacto</h2>
 
-        <script src="assets/js/main.js"></script>
+    <form class="contact">
+      <input class="contact__input" type="text" placeholder="Nombre" required>
+      <input class="contact__input" type="email" placeholder="Correo" required>
+      <textarea class="contact__input" placeholder="Mensaje"></textarea>
+      <button class="btn btn--primary btn--lg" type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
 
+<!-- =====================================================
+FOOTER RICO
+===================================================== -->
+<footer class="footer footer--rich">
+  <div class="footer__container">
+    <div class="footer__brand">Aroma & Grano</div>
+
+    <div class="footer__columns">
+      <div class="footer__col">
+        <h4>Casa Matriz</h4>
+        <p>Av. Alameda 1234<br>Santiago</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <p>contacto@aromaygrano.cl<br>+56 9 1234 5678</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Horarios</h4>
+        <p>Lun a Dom<br>08:00 – 21:00</p>
+      </div>
+    </div>
+
+    <div class="footer__copy">© 2024 Aroma & Grano</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
-
 </html>

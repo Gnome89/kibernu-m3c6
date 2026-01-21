@@ -1,5 +1,42 @@
-/* =========================================
-   5. THEME (Opcional)
-   En este ejemplo, los colores ya están en módulos, 
-   pero aquí irían overrides si tuviéramos un "Modo Oscuro"
-   ========================================= */
+/* =========================
+THEME.CSS
+========================= */
+
+:root {
+    /* Café */
+    --color-coffee-900: #2B1A12;
+    --color-coffee-700: #4A2C1D;
+
+    /* Verde */
+    --color-green-700: #1F4F3A;
+    --color-green-500: #3E7C5E;
+    --color-green-300: #8FC6AA;
+
+    /* Base */
+    --color-ink: #0E0E0E;
+    --color-paper: #FAFAFA;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+
+    .header__menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .hero--xl {
+        padding: 8rem 1.5rem;
+    }
+
+    .carousel__img {
+        width: 300px;
+        height: 200px;
+    }
+
+    .footer__columns {
+        text-align: center;
+    }
+}

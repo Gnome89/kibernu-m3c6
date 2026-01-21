@@ -1,7 +1,6 @@
-/* =========================================
-   1. BASE (Estilos globales)
-   Reset, fuentes, elementos base HTML.
-   ========================================= */
+/* =========================
+BASE.CSS
+========================= */
 
 * {
     box-sizing: border-box;
@@ -9,19 +8,36 @@
     padding: 0;
 }
 
-html  {
+html {
     scroll-behavior: smooth;
-} 
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif; /* Fuente títulos Gourmet */
-    margin-bottom: 0.5em;
+body {
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+p {
+    font-size: 1.1rem;
 }
 
 a {
@@ -34,5 +50,6 @@ ul {
 }
 
 img {
+    display: block;
     max-width: 100%;
 }
