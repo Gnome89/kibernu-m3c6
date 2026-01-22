@@ -17,7 +17,7 @@
 
 <body>
 
-<header class="header header--large">
+<header class="header header--large" data-zone="header">
   <div class="header__container">
 
     <div class="header__brand">
@@ -57,20 +57,20 @@
   </div>
 </div>
 
-<section id="inicio" class="hero hero--xl">
+<section id="inicio" class="hero hero--xl" data-zone="hero">
   <div class="hero__content">
     <h1 class="hero__title">Café que se vive</h1>
     <p class="hero__subtitle">
       Café de especialidad, pastelería artesanal y espacios urbanos pensados para quedarse.
     </p>
     <div class="hero__actions">
-      <a href="#menu" class="btn btn--primary btn--xl">Ver Menú</a>
+      <a href="#menu" class="btn btn--primary btn--xl" id="heroCTA">Ver Menú</a>
       <a href="#menu-interactivo" class="btn btn--outline btn--xl">Especialidades</a>
     </div>
   </div>
 </section>
 
-<section class="carousel carousel--full">
+<section class="carousel carousel--full" data-zone="carousel">
   <div class="carousel__viewport">
     <div class="carousel__track">
       <img src="assets/fotos/01.jpg" class="carousel__img" alt="">
@@ -89,7 +89,7 @@
   </div>
 </section>
 
-<section id="servicios" class="section section--lg">
+<section id="servicios" class="section section--lg" data-zone="services">
   <div class="section__container">
     <h2 class="section__title">Servicios</h2>
 
@@ -115,44 +115,95 @@
   </div>
 </section>
 
-<section id="menu" class="section section--xl section--dark">
+<section id="menu" class="section section--xl section--dark" data-zone="menu">
   <div class="section__container">
-    <h2 class="section__title section__title--light">Menú</h2>
 
-    <div class="menu">
-      <div class="menu__group">
-        <h3 class="menu__group-title">Café</h3>
-        <ul class="menu__list">
-          <li class="menu__item"><span>Espresso</span><span>$2.500</span></li>
-          <li class="menu__item"><span>Latte</span><span>$3.000</span></li>
-          <li class="menu__item"><span>Cappuccino</span><span>$3.100</span></li>
-        </ul>
-      </div>
+    <header class="menu-header">
+      <h2 class="section__title section__title--light">Menú</h2>
+      <p class="menu-intro">
+        Café de especialidad preparado con precisión, acompañado de pastelería artesanal
+        elaborada a diario. Productos pensados para consumo en sala o para llevar.
+      </p>
+    </header>
 
-      <div class="menu__group">
-        <h3 class="menu__group-title">Pastelería</h3>
-        <ul class="menu__list">
-          <li class="menu__item"><span>Croissant</span><span>$1.800</span></li>
-          <li class="menu__item"><span>Brownie</span><span>$2.600</span></li>
-          <li class="menu__item"><span>Torta del día</span><span>$3.000</span></li>
+    <div class="menu-panels">
+
+      <article class="menu-panel">
+        <h3 class="menu-panel__title">☕ Café de Especialidad</h3>
+        <ul class="menu-panel__list">
+          <li class="menu-panel__item" data-item="espresso">
+            <div>
+              <strong>Espresso</strong>
+              <span class="menu-panel__desc">Extracción corta, intensa y aromática.</span>
+            </div>
+            <span class="menu-panel__price">$2.500</span>
+          </li>
+          <li class="menu-panel__item" data-item="latte">
+            <div>
+              <strong>Latte</strong>
+              <span class="menu-panel__desc">Espresso con leche texturizada.</span>
+            </div>
+            <span class="menu-panel__price">$3.000</span>
+          </li>
+          <li class="menu-panel__item" data-item="cappuccino">
+            <div>
+              <strong>Cappuccino</strong>
+              <span class="menu-panel__desc">Equilibrio perfecto entre café, leche y espuma.</span>
+            </div>
+            <span class="menu-panel__price">$3.100</span>
+          </li>
         </ul>
-      </div>
+      </article>
+
+      <article class="menu-panel">
+        <h3 class="menu-panel__title">🥐 Pastelería Artesanal</h3>
+        <ul class="menu-panel__list">
+          <li class="menu-panel__item">
+            <div>
+              <strong>Croissant</strong>
+              <span class="menu-panel__desc">Mantecoso, hojaldrado y recién horneado.</span>
+            </div>
+            <span class="menu-panel__price">$1.800</span>
+          </li>
+          <li class="menu-panel__item">
+            <div>
+              <strong>Brownie</strong>
+              <span class="menu-panel__desc">Chocolate intenso, húmedo y artesanal.</span>
+            </div>
+            <span class="menu-panel__price">$2.600</span>
+          </li>
+          <li class="menu-panel__item">
+            <div>
+              <strong>Torta del Día</strong>
+              <span class="menu-panel__desc">Selección rotativa según estación.</span>
+            </div>
+            <span class="menu-panel__price">$3.000</span>
+          </li>
+        </ul>
+      </article>
+
     </div>
+
+    <footer class="menu-footer">
+      <p>* Todos nuestros productos pueden pedirse para llevar.</p>
+      <p>* Consulta por opciones sin azúcar o leches vegetales.</p>
+    </footer>
+
   </div>
 </section>
 
-<section id="menu-interactivo" class="section section--xl section--light">
+<section id="menu-interactivo" class="section section--xl section--light" data-zone="menu-interactive">
   <div class="section__container">
     <h2 class="section__title">Especialidades de la Casa</h2>
 
     <div class="menu-category">
       <h3 class="menu-category__title">Café</h3>
       <div class="menu-grid">
-        <article class="menu-item">
+        <article class="menu-item" data-item="espresso">
           <div class="menu-item__media"><img src="assets/fotos/ESPRESSO.jpg"></div>
           <h4 class="menu-item__title">Espresso</h4>
         </article>
-        <article class="menu-item">
+        <article class="menu-item" data-item="cappuccino">
           <div class="menu-item__media"><img src="assets/fotos/CAPPUCCINO.jpg"></div>
           <h4 class="menu-item__title">Cappuccino</h4>
         </article>
@@ -197,13 +248,13 @@
   </div>
 </section>
 
-<section id="productos" class="section section--xl section--light">
+<section id="productos" class="section section--xl section--light" data-zone="products">
   <div class="section__container">
     <h2 class="section__title">Productos Destacados</h2>
 
     <div class="product-grid">
 
-      <article class="product-card">
+      <article class="product-card" data-item="espresso">
         <img src="assets/fotos/ESPRESSO.jpg" alt="Espresso">
         <span class="tag">Café</span>
         <h3>Espresso</h3>
@@ -229,7 +280,7 @@
         </div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card" data-item="cappuccino">
         <img src="assets/fotos/CAPPUCCINO.jpg" alt="Cappuccino">
         <span class="tag">Café</span>
         <h3>Cappuccino</h3>
@@ -246,20 +297,20 @@
   </div>
 </section>
 
-<section id="contacto" class="section section--lg">
+<section id="contacto" class="section section--lg" data-zone="contact">
   <div class="section__container">
     <h2 class="section__title">Contacto</h2>
 
-    <form class="contact">
+    <form class="contact" id="contactForm">
       <input class="contact__input" type="text" placeholder="Nombre" required>
-      <input class="contact__input" type="email" placeholder="Correo" required>
+      <input class="contact__input" type="email" name="email" placeholder="Correo" required>
       <textarea class="contact__input" placeholder="Mensaje"></textarea>
       <button class="btn btn--primary btn--lg" type="submit">Enviar</button>
     </form>
   </div>
 </section>
 
-<footer class="footer">
+<footer class="footer" data-zone="footer">
   <div class="l-container footer__content">
     <div class="footer__section">
       <h4>Aroma & Grano</h4>
@@ -302,6 +353,9 @@
   </div>
 </footer>
 
+<script src="assets/js/analytics/tracker.js"></script>
+<script src="assets/js/analytics/events.js"></script>
+<script src="assets/js/analytics/ux-state.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
