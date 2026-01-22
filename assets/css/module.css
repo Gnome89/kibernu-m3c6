@@ -1,5 +1,6 @@
 /* =========================
 MODULE.CSS
+Integración aditiva (overlay + productos + paleta intermedia)
 ========================= */
 
 /* ---------- HEADER ---------- */
@@ -30,7 +31,6 @@ MODULE.CSS
 
 .header__logo {
     width: 64px;
-    height: auto;
 }
 
 .header__name {
@@ -86,7 +86,7 @@ MODULE.CSS
 
 .hero {
     background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
         url("../fotos/01.jpg") center / cover no-repeat;
     color: var(--color-paper);
     text-align: center;
@@ -103,7 +103,7 @@ MODULE.CSS
 .hero__subtitle {
     font-size: 1.4rem;
     max-width: 700px;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto 3rem;
 }
 
 .hero__actions {
@@ -112,56 +112,18 @@ MODULE.CSS
     gap: 2rem;
 }
 
-/* ---------- BUTTONS ---------- */
-
-.btn {
-    padding: 1.2rem 3.2rem;
-    border-radius: 40px;
-    font-weight: 800;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.btn--primary {
-    background-color: var(--color-green-700);
-    color: var(--color-paper);
-    border: none;
-}
-
-.btn--outline {
-    background: transparent;
-    border: 2px solid var(--color-paper);
-    color: var(--color-paper);
-}
-
-.btn--xl {
-    font-size: 0.9rem;
-}
-
-.btn--lg {
-    font-size: 0.85rem;
-}
-
 /* ---------- CAROUSEL ---------- */
 
 .carousel {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    width: 100%;
     overflow: hidden;
-    background-color: var(--color-ink);
-}
-
-.carousel__viewport {
-    overflow: hidden;
+    background-color: var(--color-coffee-800);
 }
 
 .carousel__track {
     display: flex;
     gap: 2rem;
-    width: max-content;
     animation: slide 45s linear infinite;
-    will-change: transform;
 }
 
 .carousel__img {
@@ -171,17 +133,65 @@ MODULE.CSS
     border-radius: 22px;
 }
 
-/* LOOP REAL */
 @keyframes slide {
     from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    to { transform: translateX(-50%); }
+}
+
+/* ---------- SEARCH OVERLAY ---------- */
+
+.search-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 10, 8, 0.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.search-overlay.is-open {
+    display: flex;
+}
+
+.search-box {
+    background-color: var(--color-paper);
+    width: min(600px, 90%);
+    padding: 3rem;
+    border-radius: 20px;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-coffee-400);
+    margin-bottom: 1.5rem;
+}
+
+#closeSearch {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.search-result {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 /* ---------- SERVICES ---------- */
 
 .services {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 3rem;
 }
 
@@ -198,11 +208,73 @@ MODULE.CSS
     margin-bottom: 0.8rem;
 }
 
+/* ---------- PRODUCT GRID (LA BRIOCHE INTEGRADO) ---------- */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.product-card {
+    background-color: var(--color-paper);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+}
+
+.product-card img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.product-card .tag {
+    display: inline-block;
+    margin: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-green-700);
+}
+
+.product-card h3 {
+    margin: 0 1.2rem 0.6rem;
+}
+
+.product-card p {
+    margin: 0 1.2rem 1.2rem;
+    font-size: 0.95rem;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+}
+
+.product-footer button {
+    background-color: var(--color-green-700);
+    color: var(--color-paper);
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+}
+
 /* ---------- MENU ---------- */
 
 .menu {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 4rem;
 }
 
@@ -219,31 +291,12 @@ MODULE.CSS
     border-bottom: 1px dashed rgba(255,255,255,0.2);
 }
 
-/* ---------- TESTIMONIALS ---------- */
-
-.testimonials {
-    display: grid;
-    gap: 2.5rem;
-}
-
-.testimonial {
-    font-size: 1.2rem;
-    font-style: italic;
-}
-
 /* ---------- CONTACT ---------- */
 
 .contact {
     display: grid;
     gap: 1.4rem;
     max-width: 600px;
-}
-
-.contact__input {
-    padding: 1rem;
-    border-radius: 10px;
-    border: 1px solid var(--color-green-300);
-    font-size: 1rem;
 }
 
 /* ---------- FOOTER ---------- */
@@ -261,7 +314,7 @@ MODULE.CSS
 
 .footer__columns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 3rem;
     margin-bottom: 3rem;
 }
@@ -275,4 +328,71 @@ MODULE.CSS
 .footer__copy {
     text-align: center;
     opacity: 0.8;
+}
+
+/* =========================
+FOOTER LAYOUT
+========================= */
+
+.footer {
+    background-color: var(--color-coffee-900);
+    color: var(--color-paper);
+}
+
+.footer__content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 32px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.5fr;
+    gap: 3rem;
+}
+
+.footer__section h4,
+.footer__map h4 {
+    margin-bottom: 1rem;
+}
+
+.footer__section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer__socials {
+    margin-top: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    font-size: 1.3rem;
+}
+
+.footer__socials a {
+    opacity: 0.85;
+}
+
+.footer__socials a:hover {
+    opacity: 1;
+}
+
+/* ---------- MAP ---------- */
+
+.footer__map iframe {
+    width: 100%;
+    height: 220px;
+    border-radius: 12px;
+}
+
+/* ---------- BOTTOM ---------- */
+
+.footer__bottom {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.footer__bottom .l-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.2rem 32px;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.85;
 }

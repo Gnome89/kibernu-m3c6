@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Aroma & Grano | Café de Especialidad</title>
-  <meta name="description" content="Aroma & Grano. Café de especialidad, pastelería artesanal y espacios urbanos." />
+  <meta name="description" content="Aroma & Grano. Café de especialidad, pastelería artesanal y experiencia urbana." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
@@ -18,7 +22,7 @@
 <body>
 
 <!-- =====================================================
-HEADER / NAVBAR (GRANDE – BEM – PALETA VISIBLE)
+HEADER
 ===================================================== -->
 <header class="header header--large">
   <div class="header__container">
@@ -33,19 +37,34 @@ HEADER / NAVBAR (GRANDE – BEM – PALETA VISIBLE)
         <li class="header__item"><a href="#inicio" class="header__link">Inicio</a></li>
         <li class="header__item"><a href="#servicios" class="header__link">Servicios</a></li>
         <li class="header__item"><a href="#menu" class="header__link">Menú</a></li>
-        <li class="header__item"><a href="#opiniones" class="header__link">Opiniones</a></li>
+        <li class="header__item"><a href="#productos" class="header__link">Productos</a></li>
         <li class="header__item"><a href="#contacto" class="header__link">Contacto</a></li>
-        <li class="header__item"><a href="#sucursales" class="header__link">Sucursales</a></li>
       </ul>
     </nav>
 
     <div class="header__actions">
-      <button class="header__action" id="favBtn">❤ <span id="favCount">0</span></button>
-      <button class="header__action" id="cartBtn">🛒 <span id="cartCount">0</span></button>
+      <button class="header__action" id="searchBtn">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+      <button class="header__action" id="cartBtn">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <span id="cartCount">0</span>
+      </button>
     </div>
 
   </div>
 </header>
+
+<!-- =====================================================
+SEARCH OVERLAY
+===================================================== -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <button id="closeSearch">&times;</button>
+    <input type="text" id="searchInput" placeholder="Buscar productos…" />
+    <div id="searchResults"></div>
+  </div>
+</div>
 
 <!-- =====================================================
 HERO
@@ -54,49 +73,36 @@ HERO
   <div class="hero__content">
     <h1 class="hero__title">Café que se vive</h1>
     <p class="hero__subtitle">
-      Café de especialidad, diseño urbano y pastelería artesanal.
+      Café de especialidad, pastelería artesanal y espacios urbanos pensados para quedarse.
     </p>
 
     <div class="hero__actions">
       <a href="#menu" class="btn btn--primary btn--xl">Ver Menú</a>
-      <a href="assets/docs/menu-cafeteria.pdf" class="btn btn--outline btn--xl" download>Descargar Menú</a>
+      <a href="#productos" class="btn btn--outline btn--xl">Explorar Productos</a>
     </div>
   </div>
 </section>
 
 <!-- =====================================================
-CAROUSEL INFINITO REAL (LOOP CONTINUO)
+CAROUSEL
 ===================================================== -->
 <section class="carousel carousel--full">
   <div class="carousel__viewport">
     <div class="carousel__track">
-
-      <!-- SET A -->
       <img src="assets/fotos/01.jpg" class="carousel__img" alt="">
       <img src="assets/fotos/02.webp" class="carousel__img" alt="">
       <img src="assets/fotos/03.webp" class="carousel__img" alt="">
       <img src="assets/fotos/04.jpg" class="carousel__img" alt="">
       <img src="assets/fotos/05.jpg" class="carousel__img" alt="">
       <img src="assets/fotos/06.jpg" class="carousel__img" alt="">
-      <img src="assets/fotos/07.webp" class="carousel__img" alt="">
-      <img src="assets/fotos/08.webp" class="carousel__img" alt="">
-      <img src="assets/fotos/09.jpg" class="carousel__img" alt="">
-      <img src="assets/fotos/10.jpg" class="carousel__img" alt="">
-      <img src="assets/fotos/11.webp" class="carousel__img" alt="">
 
-      <!-- SET B (DUPLICADO PARA LOOP PERFECTO) -->
+      <!-- DUPLICADO LOOP -->
       <img src="assets/fotos/01.jpg" class="carousel__img" alt="">
       <img src="assets/fotos/02.webp" class="carousel__img" alt="">
       <img src="assets/fotos/03.webp" class="carousel__img" alt="">
       <img src="assets/fotos/04.jpg" class="carousel__img" alt="">
       <img src="assets/fotos/05.jpg" class="carousel__img" alt="">
       <img src="assets/fotos/06.jpg" class="carousel__img" alt="">
-      <img src="assets/fotos/07.webp" class="carousel__img" alt="">
-      <img src="assets/fotos/08.webp" class="carousel__img" alt="">
-      <img src="assets/fotos/09.jpg" class="carousel__img" alt="">
-      <img src="assets/fotos/10.jpg" class="carousel__img" alt="">
-      <img src="assets/fotos/11.webp" class="carousel__img" alt="">
-
     </div>
   </div>
 </section>
@@ -112,42 +118,38 @@ SERVICIOS
       <article class="service">
         <div class="service__icon">☕</div>
         <h3 class="service__title">Café de Especialidad</h3>
-        <p class="service__desc">Granos seleccionados, tostado propio y extracción precisa.</p>
+        <p>Granos seleccionados y extracción precisa.</p>
       </article>
 
       <article class="service">
         <div class="service__icon">🥐</div>
         <h3 class="service__title">Pastelería Artesanal</h3>
-        <p class="service__desc">Recetas propias, horneado diario y materias primas reales.</p>
+        <p>Recetas propias y horneado diario.</p>
       </article>
 
       <article class="service">
         <div class="service__icon">🛍</div>
-        <h3 class="service__title">Take Away & Delivery</h3>
-        <p class="service__desc">Pensado para la ciudad y el ritmo urbano.</p>
+        <h3 class="service__title">Take Away</h3>
+        <p>Pensado para la ciudad y el ritmo urbano.</p>
       </article>
     </div>
   </div>
 </section>
 
 <!-- =====================================================
-MENÚ REAL (GRANDE)
+MENÚ RESUMIDO
 ===================================================== -->
 <section id="menu" class="section section--xl section--dark">
   <div class="section__container">
     <h2 class="section__title section__title--light">Menú</h2>
 
     <div class="menu">
-
       <div class="menu__group">
         <h3 class="menu__group-title">Café</h3>
         <ul class="menu__list">
           <li class="menu__item"><span>Espresso</span><span>$2.500</span></li>
-          <li class="menu__item"><span>Americano</span><span>$2.700</span></li>
-          <li class="menu__item"><span>Cappuccino</span><span>$3.100</span></li>
           <li class="menu__item"><span>Latte</span><span>$3.000</span></li>
-          <li class="menu__item"><span>Flat White</span><span>$3.200</span></li>
-          <li class="menu__item"><span>Mocha</span><span>$3.400</span></li>
+          <li class="menu__item"><span>Cappuccino</span><span>$3.100</span></li>
         </ul>
       </div>
 
@@ -155,56 +157,70 @@ MENÚ REAL (GRANDE)
         <h3 class="menu__group-title">Pastelería</h3>
         <ul class="menu__list">
           <li class="menu__item"><span>Croissant</span><span>$1.800</span></li>
-          <li class="menu__item"><span>Roll de Canela</span><span>$2.400</span></li>
           <li class="menu__item"><span>Brownie</span><span>$2.600</span></li>
-          <li class="menu__item"><span>Torta del Día</span><span>$3.000</span></li>
-          <li class="menu__item"><span>Cheesecake</span><span>$3.200</span></li>
+          <li class="menu__item"><span>Torta del día</span><span>$3.000</span></li>
         </ul>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- =====================================================
-OPINIONES
+PRODUCTOS INTERACTIVOS (INTEGRACIÓN LA BRIOCHE)
 ===================================================== -->
-<section id="opiniones" class="section section--lg">
+<section id="productos" class="section section--xl section--light">
   <div class="section__container">
-    <h2 class="section__title">Opiniones</h2>
+    <h2 class="section__title">Productos Destacados</h2>
 
-    <div class="testimonials">
-      <article class="testimonial">“El mejor café que he probado en Chile.” — María G.</article>
-      <article class="testimonial">“Diseño, calidad y ambiente real.” — Carlos R.</article>
-      <article class="testimonial">“Mi lugar fijo para trabajar.” — Sofía L.</article>
+    <div class="product-grid">
+
+      <article class="product-card">
+        <img src="assets/fotos/productos/espresso.jpg" alt="Espresso">
+        <span class="tag">Café</span>
+        <h3>Espresso</h3>
+        <p>Intenso y aromático.</p>
+        <div class="product-footer">
+          <span class="price">$2.500</span>
+          <button data-name="Espresso" data-price="2500">
+            <span class="material-symbols-outlined">add</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="assets/fotos/productos/croissant.jpg" alt="Croissant">
+        <span class="tag">Pastelería</span>
+        <h3>Croissant</h3>
+        <p>Crujiente y hojaldrado.</p>
+        <div class="product-footer">
+          <span class="price">$1.800</span>
+          <button data-name="Croissant" data-price="1800">
+            <span class="material-symbols-outlined">add</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="assets/fotos/productos/latte.jpg" alt="Latte">
+        <span class="tag">Café</span>
+        <h3>Latte</h3>
+        <p>Suave y balanceado.</p>
+        <div class="product-footer">
+          <span class="price">$3.000</span>
+          <button data-name="Latte" data-price="3000">
+            <span class="material-symbols-outlined">add</span>
+          </button>
+        </div>
+      </article>
+
     </div>
-  </div>
-</section>
-
-<!-- =====================================================
-SUCURSALES
-===================================================== -->
-<section id="sucursales" class="section section--lg section--map">
-  <div class="section__container">
-    <h2 class="section__title">Sucursales</h2>
-
-    <ul class="branches">
-      <li><strong>Casa Matriz:</strong> Av. Alameda 1234, Santiago</li>
-      <li>Santiago: Providencia, Ñuñoa, Las Condes, Vitacura, Centro</li>
-      <li>Valparaíso: Cerro Alegre, Plan</li>
-      <li>Viña del Mar: Centro, Reñaca, Miramar</li>
-      <li>La Serena: Avenida del Mar</li>
-      <li>Concepción: Centro, San Pedro, Barrio Universitario</li>
-    </ul>
-
-    <iframe src="https://www.google.com/maps?q=Santiago%20Chile&output=embed" loading="lazy"></iframe>
   </div>
 </section>
 
 <!-- =====================================================
 CONTACTO
 ===================================================== -->
-<section id="contacto" class="section section--lg section--light">
+<section id="contacto" class="section section--lg">
   <div class="section__container">
     <h2 class="section__title">Contacto</h2>
 
@@ -218,32 +234,51 @@ CONTACTO
 </section>
 
 <!-- =====================================================
-FOOTER RICO
+FOOTER
 ===================================================== -->
-<footer class="footer footer--rich">
-  <div class="footer__container">
-    <div class="footer__brand">Aroma & Grano</div>
+<footer class="footer">
+  <div class="l-container footer__content">
+    <div class="footer__section">
+      <h4>Aroma & Grano</h4>
+      <p>Café de especialidad para exigentes. Granos seleccionados, preparados con cuidado.</p>
 
-    <div class="footer__columns">
-      <div class="footer__col">
-        <h4>Casa Matriz</h4>
-        <p>Av. Alameda 1234<br>Santiago</p>
-      </div>
-
-      <div class="footer__col">
-        <h4>Contacto</h4>
-        <p>contacto@aromaygrano.cl<br>+56 9 1234 5678</p>
-      </div>
-
-      <div class="footer__col">
-        <h4>Horarios</h4>
-        <p>Lun a Dom<br>08:00 – 21:00</p>
+      <div class="footer__socials">
+        <a href="https://www.instagram.com" target="_blank">📱</a>
+        <a href="https://www.facebook.com" target="_blank">f</a>
+        <a href="https://www.whatsapp.com" target="_blank">💬</a>
       </div>
     </div>
 
-    <div class="footer__copy">© 2024 Aroma & Grano</div>
+    <div class="footer__section">
+      <h4>Contacto</h4>
+      <p>📍 Calle Principal 123, Santiago</p>
+      <p>📞 +56 2 2234 5678</p>
+      <p>✉️ info@aromagrano.cl</p>
+      <p style="margin-top:15px;font-size:14px">
+        Lunes a Viernes: 7:00 AM - 8:00 PM<br>
+        Sábado y Domingo: 8:00 AM - 7:00 PM
+      </p>
+    </div>
+
+    <div class="footer__map">
+      <h4>Ubicación</h4>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=..."
+        width="100%"
+        height="200"
+        style="border:0;border-radius:8px"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="l-container">
+      <p>&copy; 2026 Aroma & Grano. Grupo 1 - Todos los derechos reservados ☕</p>
+    </div>
   </div>
 </footer>
+
 
 <script src="assets/js/main.js"></script>
 </body>

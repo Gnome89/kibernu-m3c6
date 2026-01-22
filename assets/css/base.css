@@ -1,8 +1,11 @@
 /* =========================
 BASE.CSS
+Reset + tipografía base
 ========================= */
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -16,8 +19,10 @@ body {
     font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--color-paper);
     color: var(--color-ink);
-    line-height: 1.5;
+    line-height: 1.6;
 }
+
+/* ---------- TYPOGRAPHY ---------- */
 
 h1, h2, h3, h4 {
     font-weight: 700;
@@ -37,8 +42,11 @@ h3 {
 }
 
 p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    opacity: 0.95;
 }
+
+/* ---------- ELEMENTS ---------- */
 
 a {
     text-decoration: none;
@@ -52,4 +60,13 @@ ul {
 img {
     display: block;
     max-width: 100%;
+}
+
+/* ---------- FORMS ---------- */
+
+input,
+textarea,
+button {
+    font-family: inherit;
+    font-size: inherit;
 }

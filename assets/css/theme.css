@@ -1,42 +1,81 @@
 /* =========================
 THEME.CSS
+Paleta + transición cromática integrada
 ========================= */
 
 :root {
-    /* Café */
-    --color-coffee-900: #2B1A12;
-    --color-coffee-700: #4A2C1D;
+    /* ---------- BASE ---------- */
+    --color-paper: #f6f1ec;
+    --color-ink: #1e1a17;
 
-    /* Verde */
-    --color-green-700: #1F4F3A;
-    --color-green-500: #3E7C5E;
-    --color-green-300: #8FC6AA;
+    /* ---------- COFFEE ---------- */
+    --color-coffee-900: #2b1e17;
+    --color-coffee-800: #3a271d;
+    --color-coffee-700: #4a3326;
+    --color-coffee-600: #5c4032;
+    --color-coffee-500: #6f5243;
+    --color-coffee-400: #8a6a57;
 
-    /* Base */
-    --color-ink: #0E0E0E;
-    --color-paper: #FAFAFA;
+    /* ---------- GREEN ACCENT ---------- */
+    --color-green-700: #2f6f4e;
+    --color-green-500: #4f9c73;
+    --color-green-300: #8bc7a8;
+
+    /* ---------- UI ---------- */
+    --radius-lg: 22px;
+    --radius-md: 14px;
+    --radius-sm: 8px;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ---------- SECTION BACKGROUND FLOW ---------- */
 
-@media (max-width: 768px) {
+.section {
+    background-color: var(--color-paper);
+}
 
-    .header__menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.5rem;
-    }
+.section--light {
+    background-color: var(--color-paper);
+}
 
-    .hero--xl {
-        padding: 8rem 1.5rem;
-    }
+.section--dark {
+    background-color: var(--color-coffee-800);
+    color: var(--color-paper);
+}
 
-    .carousel__img {
-        width: 300px;
-        height: 200px;
-    }
+/* ---------- SOFT TRANSITIONS ---------- */
 
-    .footer__columns {
-        text-align: center;
-    }
+.section,
+.hero,
+.carousel {
+    transition: background-color 0.6s ease;
+}
+
+/* ---------- BUTTON THEMING ---------- */
+
+.btn--primary {
+    background-color: var(--color-green-700);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-green-500);
+}
+
+/* ---------- PRODUCT TAG ---------- */
+
+.tag {
+    background-color: rgba(79, 156, 115, 0.15);
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--radius-sm);
+}
+
+/* ---------- SEARCH RESULTS ---------- */
+
+.search-result:hover {
+    background-color: rgba(0,0,0,0.04);
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    background-color: var(--color-coffee-900);
 }
