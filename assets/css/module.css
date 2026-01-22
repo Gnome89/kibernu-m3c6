@@ -1,7 +1,6 @@
 /* =========================
 MODULE.CSS
-VERSIÓN COMPLETA CORRECTA
-(NO ROMPE HEADER / HERO / CAROUSEL)
+Bloques BEM + componentes
 ========================= */
 
 /* ---------- HEADER ---------- */
@@ -22,7 +21,6 @@ VERSIÓN COMPLETA CORRECTA
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 32px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,7 +49,7 @@ VERSIÓN COMPLETA CORRECTA
 }
 
 .header__link {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.18em;
     font-weight: 700;
@@ -65,7 +63,7 @@ VERSIÓN COMPLETA CORRECTA
     bottom: -8px;
     width: 0;
     height: 3px;
-    background-color: var(--color-green-500);
+    background-color: var(--color-accent);
     transition: width 0.3s ease;
 }
 
@@ -80,18 +78,17 @@ VERSIÓN COMPLETA CORRECTA
 
 .header__action {
     background: transparent;
-    border: 2px solid var(--color-green-500);
+    border: 2px solid var(--color-accent);
     color: var(--color-paper);
-    padding: 0.6rem 1rem;
-    border-radius: 30px;
-    font-weight: 700;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
     cursor: pointer;
+    font-weight: 700;
 }
 
 /* ---------- HERO ---------- */
 
 .hero {
-    position: relative;
     background:
         linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
         url("../fotos/01.jpg") center / cover no-repeat;
@@ -109,42 +106,37 @@ VERSIÓN COMPLETA CORRECTA
 
 .hero__subtitle {
     font-size: 1.4rem;
-    max-width: 700px;
+    max-width: 720px;
     margin: 0 auto 3rem;
+    opacity: 0.9;
 }
 
 .hero__actions {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 /* ---------- BUTTONS ---------- */
 
 .btn {
     display: inline-block;
-    padding: 0.9rem 1.6rem;
+    padding: 0.9rem 1.8rem;
     border-radius: 999px;
     font-weight: 700;
+    letter-spacing: 0.04em;
 }
 
 .btn--primary {
-    background-color: var(--color-green-700);
+    background-color: var(--color-accent);
     color: var(--color-paper);
-}
-
-.btn--primary:hover {
-    background-color: var(--color-green-500);
 }
 
 .btn--outline {
-    border: 2px solid var(--color-green-700);
-    color: var(--color-green-700);
-}
-
-.btn--outline:hover {
-    background-color: var(--color-green-700);
-    color: var(--color-paper);
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    background: transparent;
 }
 
 /* ---------- CAROUSEL ---------- */
@@ -155,15 +147,10 @@ VERSIÓN COMPLETA CORRECTA
     background-color: var(--color-coffee-800);
 }
 
-.carousel__viewport {
-    width: 100%;
-    overflow: hidden;
-}
-
 .carousel__track {
     display: flex;
     gap: 2rem;
-    will-change: transform;
+    animation: slide 45s linear infinite;
 }
 
 .carousel__img {
@@ -171,7 +158,11 @@ VERSIÓN COMPLETA CORRECTA
     height: 280px;
     object-fit: cover;
     border-radius: 22px;
-    flex-shrink: 0;
+}
+
+@keyframes slide {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
 
 /* ---------- SEARCH OVERLAY ---------- */
@@ -179,7 +170,7 @@ VERSIÓN COMPLETA CORRECTA
 .search-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(15, 10, 8, 0.92);
+    background: rgba(28,26,23,0.92);
     display: none;
     align-items: center;
     justify-content: center;
@@ -194,16 +185,15 @@ VERSIÓN COMPLETA CORRECTA
     background-color: var(--color-paper);
     width: min(600px, 90%);
     padding: 3rem;
-    border-radius: 20px;
+    border-radius: 22px;
     position: relative;
 }
 
 .search-box input {
     width: 100%;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid var(--color-coffee-400);
-    margin-bottom: 1.5rem;
 }
 
 #closeSearch {
@@ -214,13 +204,6 @@ VERSIÓN COMPLETA CORRECTA
     border: none;
     font-size: 2rem;
     cursor: pointer;
-}
-
-.search-result {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 /* ---------- SERVICES ---------- */
@@ -244,28 +227,42 @@ VERSIÓN COMPLETA CORRECTA
     margin-bottom: 0.8rem;
 }
 
-/* ---------- MENU RESUMIDO ---------- */
+/* ---------- MENU (NORMALIZADO) ---------- */
 
-.menu {
+.menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
 }
 
-.menu__group-title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.menu__item {
+.menu-item {
     display: flex;
-    justify-content: space-between;
-    font-size: 1.15rem;
-    padding: 0.6rem 0;
-    border-bottom: 1px dashed rgba(255,255,255,0.2);
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
-/* ---------- PRODUCT GRID (INTERACTIVO) ---------- */
+.menu-item__media {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 14px;
+    background-color: var(--color-coffee-700);
+}
+
+.menu-item__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-item__title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-ink);
+}
+
+/* ---------- PRODUCT GRID ---------- */
 
 .product-grid {
     display: grid;
@@ -298,7 +295,7 @@ VERSIÓN COMPLETA CORRECTA
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--color-green-700);
+    color: var(--color-accent);
 }
 
 .product-card h3 {
@@ -318,7 +315,7 @@ VERSIÓN COMPLETA CORRECTA
 }
 
 .product-footer button {
-    background-color: var(--color-green-700);
+    background-color: var(--color-accent);
     color: var(--color-paper);
     border: none;
     border-radius: 50%;
@@ -346,7 +343,6 @@ VERSIÓN COMPLETA CORRECTA
     max-width: 1280px;
     margin: 0 auto;
     padding: 4rem 32px;
-
     display: grid;
     grid-template-columns: 1.2fr 1fr 1.5fr;
     gap: 3rem;
@@ -357,24 +353,11 @@ VERSIÓN COMPLETA CORRECTA
     margin-bottom: 1rem;
 }
 
-.footer__section p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
 .footer__socials {
     margin-top: 1.2rem;
     display: flex;
     gap: 1rem;
     font-size: 1.3rem;
-}
-
-.footer__socials a {
-    opacity: 0.85;
-}
-
-.footer__socials a:hover {
-    opacity: 1;
 }
 
 .footer__map iframe {
@@ -384,7 +367,7 @@ VERSIÓN COMPLETA CORRECTA
 }
 
 .footer__bottom {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.25);
 }
 
 .footer__bottom .l-container {
