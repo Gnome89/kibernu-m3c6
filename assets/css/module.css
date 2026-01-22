@@ -1,11 +1,15 @@
 /* =========================
 MODULE.CSS
-Integración aditiva (overlay + productos + paleta intermedia)
+VERSIÓN COMPLETA CORRECTA
+(NO ROMPE HEADER / HERO / CAROUSEL)
 ========================= */
 
 /* ---------- HEADER ---------- */
 
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background-color: var(--color-coffee-900);
     color: var(--color-paper);
 }
@@ -18,6 +22,7 @@ Integración aditiva (overlay + productos + paleta intermedia)
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 32px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,6 +36,7 @@ Integración aditiva (overlay + productos + paleta intermedia)
 
 .header__logo {
     width: 64px;
+    height: auto;
 }
 
 .header__name {
@@ -85,6 +91,7 @@ Integración aditiva (overlay + productos + paleta intermedia)
 /* ---------- HERO ---------- */
 
 .hero {
+    position: relative;
     background:
         linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
         url("../fotos/01.jpg") center / cover no-repeat;
@@ -112,6 +119,34 @@ Integración aditiva (overlay + productos + paleta intermedia)
     gap: 2rem;
 }
 
+/* ---------- BUTTONS ---------- */
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.btn--primary {
+    background-color: var(--color-green-700);
+    color: var(--color-paper);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-green-500);
+}
+
+.btn--outline {
+    border: 2px solid var(--color-green-700);
+    color: var(--color-green-700);
+}
+
+.btn--outline:hover {
+    background-color: var(--color-green-700);
+    color: var(--color-paper);
+}
+
 /* ---------- CAROUSEL ---------- */
 
 .carousel {
@@ -120,10 +155,15 @@ Integración aditiva (overlay + productos + paleta intermedia)
     background-color: var(--color-coffee-800);
 }
 
+.carousel__viewport {
+    width: 100%;
+    overflow: hidden;
+}
+
 .carousel__track {
     display: flex;
     gap: 2rem;
-    animation: slide 45s linear infinite;
+    will-change: transform;
 }
 
 .carousel__img {
@@ -131,11 +171,7 @@ Integración aditiva (overlay + productos + paleta intermedia)
     height: 280px;
     object-fit: cover;
     border-radius: 22px;
-}
-
-@keyframes slide {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    flex-shrink: 0;
 }
 
 /* ---------- SEARCH OVERLAY ---------- */
@@ -208,7 +244,28 @@ Integración aditiva (overlay + productos + paleta intermedia)
     margin-bottom: 0.8rem;
 }
 
-/* ---------- PRODUCT GRID (LA BRIOCHE INTEGRADO) ---------- */
+/* ---------- MENU RESUMIDO ---------- */
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 4rem;
+}
+
+.menu__group-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu__item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.15rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.2);
+}
+
+/* ---------- PRODUCT GRID (INTERACTIVO) ---------- */
 
 .product-grid {
     display: grid;
@@ -270,27 +327,6 @@ Integración aditiva (overlay + productos + paleta intermedia)
     cursor: pointer;
 }
 
-/* ---------- MENU ---------- */
-
-.menu {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 4rem;
-}
-
-.menu__group-title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.menu__item {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.15rem;
-    padding: 0.6rem 0;
-    border-bottom: 1px dashed rgba(255,255,255,0.2);
-}
-
 /* ---------- CONTACT ---------- */
 
 .contact {
@@ -300,39 +336,6 @@ Integración aditiva (overlay + productos + paleta intermedia)
 }
 
 /* ---------- FOOTER ---------- */
-
-.footer {
-    background-color: var(--color-coffee-900);
-    color: var(--color-paper);
-}
-
-.footer__container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 32px;
-}
-
-.footer__columns {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
-}
-
-.footer__brand {
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 2rem;
-}
-
-.footer__copy {
-    text-align: center;
-    opacity: 0.8;
-}
-
-/* =========================
-FOOTER LAYOUT
-========================= */
 
 .footer {
     background-color: var(--color-coffee-900);
@@ -374,15 +377,11 @@ FOOTER LAYOUT
     opacity: 1;
 }
 
-/* ---------- MAP ---------- */
-
 .footer__map iframe {
     width: 100%;
     height: 220px;
     border-radius: 12px;
 }
-
-/* ---------- BOTTOM ---------- */
 
 .footer__bottom {
     background-color: rgba(0,0,0,0.2);

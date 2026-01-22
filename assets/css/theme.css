@@ -1,25 +1,22 @@
 /* =========================
 THEME.CSS
-Paleta + transición cromática integrada
+PALETA CORREGIDA (ALTO CONTRASTE)
 ========================= */
 
 :root {
     /* ---------- BASE ---------- */
-    --color-paper: #f6f1ec;
-    --color-ink: #1e1a17;
+    --color-paper: #F5F1EA;   /* fondo claro */
+    --color-ink:   #1C1A17;   /* texto principal */
 
-    /* ---------- COFFEE ---------- */
-    --color-coffee-900: #2b1e17;
-    --color-coffee-800: #3a271d;
-    --color-coffee-700: #4a3326;
-    --color-coffee-600: #5c4032;
-    --color-coffee-500: #6f5243;
-    --color-coffee-400: #8a6a57;
+    /* ---------- FONDOS OSCUROS ---------- */
+    --color-coffee-900: #1C1A17;
+    --color-coffee-800: #2A241E;
+    --color-coffee-700: #3A332C;
 
-    /* ---------- GREEN ACCENT ---------- */
-    --color-green-700: #2f6f4e;
-    --color-green-500: #4f9c73;
-    --color-green-300: #8bc7a8;
+    /* ---------- ACENTOS ---------- */
+    --color-accent-gold:  #C08A3E;
+    --color-accent-brown: #8B5E34;
+    --color-accent-green: #6E7F5C;
 
     /* ---------- UI ---------- */
     --radius-lg: 22px;
@@ -27,14 +24,23 @@ Paleta + transición cromática integrada
     --radius-sm: 8px;
 }
 
-/* ---------- SECTION BACKGROUND FLOW ---------- */
+/* ---------- BODY ---------- */
+
+body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+}
+
+/* ---------- SECTIONS ---------- */
 
 .section {
     background-color: var(--color-paper);
+    color: var(--color-ink);
 }
 
 .section--light {
     background-color: var(--color-paper);
+    color: var(--color-ink);
 }
 
 .section--dark {
@@ -42,40 +48,118 @@ Paleta + transición cromática integrada
     color: var(--color-paper);
 }
 
-/* ---------- SOFT TRANSITIONS ---------- */
-
-.section,
-.hero,
-.carousel {
-    transition: background-color 0.6s ease;
+.section__title {
+    color: var(--color-ink);
 }
 
-/* ---------- BUTTON THEMING ---------- */
+.section__title--light {
+    color: var(--color-paper);
+}
+
+/* ---------- HEADER ---------- */
+
+.header {
+    background-color: var(--color-coffee-900);
+    color: var(--color-paper);
+}
+
+.header__link {
+    color: var(--color-paper);
+}
+
+.header__link::after {
+    background-color: var(--color-accent-gold);
+}
+
+.header__action {
+    border-color: var(--color-accent-gold);
+    color: var(--color-paper);
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    color: var(--color-paper);
+}
+
+/* ---------- BUTTONS ---------- */
 
 .btn--primary {
-    background-color: var(--color-green-700);
+    background-color: var(--color-accent-gold);
+    color: var(--color-coffee-900);
 }
 
 .btn--primary:hover {
-    background-color: var(--color-green-500);
+    background-color: var(--color-accent-brown);
+    color: var(--color-paper);
 }
 
-/* ---------- PRODUCT TAG ---------- */
-
-.tag {
-    background-color: rgba(79, 156, 115, 0.15);
-    padding: 0.3rem 0.7rem;
-    border-radius: var(--radius-sm);
+.btn--outline {
+    border-color: var(--color-accent-gold);
+    color: var(--color-accent-gold);
 }
 
-/* ---------- SEARCH RESULTS ---------- */
+.btn--outline:hover {
+    background-color: var(--color-accent-gold);
+    color: var(--color-coffee-900);
+}
 
-.search-result:hover {
-    background-color: rgba(0,0,0,0.04);
+/* ---------- MENU RESUMIDO ---------- */
+
+.menu__group-title {
+    color: var(--color-paper);
+}
+
+.menu__item {
+    color: var(--color-paper);
+    border-bottom-color: rgba(245,241,234,0.25);
+}
+
+/* ---------- PRODUCT CARDS ---------- */
+
+.product-card {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+}
+
+.product-card .tag {
+    background-color: rgba(110, 127, 92, 0.15);
+    color: var(--color-accent-green);
+}
+
+.product-footer button {
+    background-color: var(--color-accent-green);
+    color: var(--color-paper);
+}
+
+/* ---------- SEARCH OVERLAY ---------- */
+
+.search-overlay {
+    background: rgba(28, 26, 23, 0.95);
+}
+
+.search-box {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
 }
 
 /* ---------- FOOTER ---------- */
 
 .footer {
     background-color: var(--color-coffee-900);
+    color: var(--color-paper);
+}
+
+.footer__section p,
+.footer__map h4 {
+    color: var(--color-paper);
+}
+
+.footer__socials a {
+    color: var(--color-accent-gold);
+}
+
+.footer__bottom {
+    background-color: #2A241E;
+    color: var(--color-paper);
 }

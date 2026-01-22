@@ -7,23 +7,17 @@
   <title>Aroma & Grano | Café de Especialidad</title>
   <meta name="description" content="Aroma & Grano. Café de especialidad, pastelería artesanal y experiencia urbana." />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
-  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
 
-<!-- =====================================================
-HEADER
-===================================================== -->
 <header class="header header--large">
   <div class="header__container">
 
@@ -37,6 +31,7 @@ HEADER
         <li class="header__item"><a href="#inicio" class="header__link">Inicio</a></li>
         <li class="header__item"><a href="#servicios" class="header__link">Servicios</a></li>
         <li class="header__item"><a href="#menu" class="header__link">Menú</a></li>
+        <li class="header__item"><a href="#menu-interactivo" class="header__link">Especialidades</a></li>
         <li class="header__item"><a href="#productos" class="header__link">Productos</a></li>
         <li class="header__item"><a href="#contacto" class="header__link">Contacto</a></li>
       </ul>
@@ -55,9 +50,6 @@ HEADER
   </div>
 </header>
 
-<!-- =====================================================
-SEARCH OVERLAY
-===================================================== -->
 <div class="search-overlay" id="searchOverlay">
   <div class="search-box">
     <button id="closeSearch">&times;</button>
@@ -66,9 +58,6 @@ SEARCH OVERLAY
   </div>
 </div>
 
-<!-- =====================================================
-HERO
-===================================================== -->
 <section id="inicio" class="hero hero--xl">
   <div class="hero__content">
     <h1 class="hero__title">Café que se vive</h1>
@@ -78,14 +67,11 @@ HERO
 
     <div class="hero__actions">
       <a href="#menu" class="btn btn--primary btn--xl">Ver Menú</a>
-      <a href="#productos" class="btn btn--outline btn--xl">Explorar Productos</a>
+      <a href="#menu-interactivo" class="btn btn--outline btn--xl">Especialidades</a>
     </div>
   </div>
 </section>
 
-<!-- =====================================================
-CAROUSEL
-===================================================== -->
 <section class="carousel carousel--full">
   <div class="carousel__viewport">
     <div class="carousel__track">
@@ -95,8 +81,6 @@ CAROUSEL
       <img src="assets/fotos/04.jpg" class="carousel__img" alt="">
       <img src="assets/fotos/05.jpg" class="carousel__img" alt="">
       <img src="assets/fotos/06.jpg" class="carousel__img" alt="">
-
-      <!-- DUPLICADO LOOP -->
       <img src="assets/fotos/01.jpg" class="carousel__img" alt="">
       <img src="assets/fotos/02.webp" class="carousel__img" alt="">
       <img src="assets/fotos/03.webp" class="carousel__img" alt="">
@@ -107,9 +91,6 @@ CAROUSEL
   </div>
 </section>
 
-<!-- =====================================================
-SERVICIOS
-===================================================== -->
 <section id="servicios" class="section section--lg">
   <div class="section__container">
     <h2 class="section__title">Servicios</h2>
@@ -136,9 +117,6 @@ SERVICIOS
   </div>
 </section>
 
-<!-- =====================================================
-MENÚ RESUMIDO
-===================================================== -->
 <section id="menu" class="section section--xl section--dark">
   <div class="section__container">
     <h2 class="section__title section__title--light">Menú</h2>
@@ -165,9 +143,50 @@ MENÚ RESUMIDO
   </div>
 </section>
 
-<!-- =====================================================
-PRODUCTOS INTERACTIVOS (INTEGRACIÓN LA BRIOCHE)
-===================================================== -->
+<section id="menu-interactivo" class="section section--xl section--light">
+  <div class="section__container">
+    <h2 class="section__title">Especialidades de la Casa</h2>
+
+    <div class="menu-category">
+      <h3 class="menu-category__title">Café</h3>
+      <div class="menu-grid">
+        <article class="menu-card"><img src="assets/fotos/ESPRESSO.jpg"><h4>Espresso</h4></article>
+        <article class="menu-card"><img src="assets/fotos/CAPPUCCINO.jpg"><h4>Cappuccino</h4></article>
+        <article class="menu-card"><img src="assets/fotos/ARTE_LATE.jpg"><h4>Latte Art</h4></article>
+        <article class="menu-card"><img src="assets/fotos/CAFE_LLEVAR.jpg"><h4>Take Away</h4></article>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h3 class="menu-category__title">Pastelería</h3>
+      <div class="menu-grid">
+        <article class="menu-card"><img src="assets/fotos/CROISSANT.webp"><h4>Croissant</h4></article>
+        <article class="menu-card"><img src="assets/fotos/BROWNIE.jpg"><h4>Brownie</h4></article>
+        <article class="menu-card"><img src="assets/fotos/KUCHEN.avif"><h4>Kuchen</h4></article>
+        <article class="menu-card"><img src="assets/fotos/VITRINA.jpg"><h4>Selección del Día</h4></article>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h3 class="menu-category__title">Tortas & Dulces</h3>
+      <div class="menu-grid">
+        <article class="menu-card"><img src="assets/fotos/TORTA_COMPLETA.jpg"><h4>Torta Completa</h4></article>
+        <article class="menu-card"><img src="assets/fotos/TORTA_CORTE_1.jpg"><h4>Porción</h4></article>
+        <article class="menu-card"><img src="assets/fotos/CHESSE_ESTRELLA.jpg"><h4>Cheesecake</h4></article>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h3 class="menu-category__title">Desayunos</h3>
+      <div class="menu-grid">
+        <article class="menu-card"><img src="assets/fotos/DESAYUNO_COMPLETO.webp"><h4>Desayuno Completo</h4></article>
+        <article class="menu-card"><img src="assets/fotos/CAFE_CRIOSSANT.jpg"><h4>Café + Croissant</h4></article>
+        <article class="menu-card"><img src="assets/fotos/AMBIENTE.jpg"><h4>Experiencia</h4></article>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="productos" class="section section--xl section--light">
   <div class="section__container">
     <h2 class="section__title">Productos Destacados</h2>
@@ -175,7 +194,7 @@ PRODUCTOS INTERACTIVOS (INTEGRACIÓN LA BRIOCHE)
     <div class="product-grid">
 
       <article class="product-card">
-        <img src="assets/fotos/productos/espresso.jpg" alt="Espresso">
+        <img src="assets/fotos/ESPRESSO.jpg" alt="Espresso">
         <span class="tag">Café</span>
         <h3>Espresso</h3>
         <p>Intenso y aromático.</p>
@@ -188,7 +207,7 @@ PRODUCTOS INTERACTIVOS (INTEGRACIÓN LA BRIOCHE)
       </article>
 
       <article class="product-card">
-        <img src="assets/fotos/productos/croissant.jpg" alt="Croissant">
+        <img src="assets/fotos/CROISSANT.webp" alt="Croissant">
         <span class="tag">Pastelería</span>
         <h3>Croissant</h3>
         <p>Crujiente y hojaldrado.</p>
@@ -201,13 +220,13 @@ PRODUCTOS INTERACTIVOS (INTEGRACIÓN LA BRIOCHE)
       </article>
 
       <article class="product-card">
-        <img src="assets/fotos/productos/latte.jpg" alt="Latte">
+        <img src="assets/fotos/CAPPUCCINO.jpg" alt="Cappuccino">
         <span class="tag">Café</span>
-        <h3>Latte</h3>
+        <h3>Cappuccino</h3>
         <p>Suave y balanceado.</p>
         <div class="product-footer">
-          <span class="price">$3.000</span>
-          <button data-name="Latte" data-price="3000">
+          <span class="price">$3.100</span>
+          <button data-name="Cappuccino" data-price="3100">
             <span class="material-symbols-outlined">add</span>
           </button>
         </div>
@@ -217,9 +236,6 @@ PRODUCTOS INTERACTIVOS (INTEGRACIÓN LA BRIOCHE)
   </div>
 </section>
 
-<!-- =====================================================
-CONTACTO
-===================================================== -->
 <section id="contacto" class="section section--lg">
   <div class="section__container">
     <h2 class="section__title">Contacto</h2>
@@ -233,9 +249,6 @@ CONTACTO
   </div>
 </section>
 
-<!-- =====================================================
-FOOTER
-===================================================== -->
 <footer class="footer">
   <div class="l-container footer__content">
     <div class="footer__section">
@@ -278,7 +291,6 @@ FOOTER
     </div>
   </div>
 </footer>
-
 
 <script src="assets/js/main.js"></script>
 </body>

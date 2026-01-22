@@ -1,69 +1,67 @@
 /* =========================
-LAYOUT.CSS
-Estructura y flujo general
+layout.css
 ========================= */
 
+.l-container,
+.section__container,
+.header__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 .section {
-    width: 100%;
+  padding: 4rem 0;
 }
 
 .section--lg {
-    padding: 7rem 0;
+  padding: 5rem 0;
 }
 
 .section--xl {
-    padding: 9rem 0;
-}
-
-.section--light {
-    background-color: var(--color-paper);
-}
-
-.section--dark {
-    background-color: var(--color-coffee-800);
-    color: var(--color-paper);
-}
-
-.section--map iframe {
-    width: 100%;
-    height: 360px;
-    border: 0;
-    margin-top: 2.5rem;
-}
-
-.section__container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 32px;
+  padding: 6rem 0;
 }
 
 .section__title {
-    margin-bottom: 4rem;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-.section__title--light {
-    color: var(--color-paper);
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* ---------- HEADER LAYOUT ---------- */
-
-.l-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.hero__content {
+  max-width: 760px;
 }
 
-/* ---------- LISTS / BRANCHES ---------- */
-
-.branches {
-    display: grid;
-    gap: 0.8rem;
-    margin-bottom: 2rem;
+.carousel {
+  overflow: hidden;
+  width: 100%;
 }
 
-/* ---------- GENERIC GRIDS ---------- */
+.carousel__track {
+  display: flex;
+  gap: 2rem;
+  will-change: transform;
+}
 
-.grid {
-    display: grid;
-    gap: 2rem;
+.services,
+.menu-grid,
+.product-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.services {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.menu-grid,
+.product-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }

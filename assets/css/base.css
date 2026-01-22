@@ -1,72 +1,70 @@
 /* =========================
-BASE.CSS
-Reset + tipografía base
+base.css
 ========================= */
+
+:root {
+  --font-base: 'Poppins', system-ui, sans-serif;
+
+  --fs-h1: clamp(2.4rem, 4vw, 3.6rem);
+  --fs-h2: clamp(1.8rem, 3vw, 2.6rem);
+  --fs-h3: 1.4rem;
+  --fs-h4: 1.1rem;
+  --fs-body: 0.95rem;
+
+  --lh-tight: 1.2;
+  --lh-base: 1.6;
+}
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: var(--color-paper);
-    color: var(--color-ink);
-    line-height: 1.6;
-}
-
-/* ---------- TYPOGRAPHY ---------- */
-
-h1, h2, h3, h4 {
-    font-weight: 700;
-    letter-spacing: -0.02em;
-}
-
-h1 {
-    font-size: clamp(3rem, 5vw, 4.5rem);
-}
-
-h2 {
-    font-size: clamp(2.4rem, 4vw, 3.4rem);
-}
-
-h3 {
-    font-size: 1.6rem;
-}
-
-p {
-    font-size: 1.05rem;
-    opacity: 0.95;
-}
-
-/* ---------- ELEMENTS ---------- */
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
+  margin: 0;
+  font-family: var(--font-base);
+  font-size: var(--fs-body);
+  line-height: var(--lh-base);
+  color: #222;
+  background: var(--color-bg-main);
 }
 
 img {
-    display: block;
-    max-width: 100%;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-/* ---------- FORMS ---------- */
+h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+}
 
-input,
-textarea,
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 button {
-    font-family: inherit;
-    font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
 }

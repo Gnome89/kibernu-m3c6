@@ -1,43 +1,28 @@
 /* =========================
-STATE.CSS
-Estados interactivos (integración aditiva)
+state.css
 ========================= */
 
 .is-active {
-    color: var(--color-green-500);
+  display: block !important;
 }
 
-.is-scrolled {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+.search-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.7);
+  z-index: 200;
 }
 
-/* ---------- OVERLAY / MODALS ---------- */
-
-.is-open {
-    display: flex !important;
+.search-box {
+  background: #fff;
+  max-width: 500px;
+  margin: 10vh auto;
+  padding: 2rem;
+  border-radius: 12px;
 }
 
-/* ---------- CART / BUTTON STATES ---------- */
-
-.is-added {
-    animation: addedPulse 0.6s ease;
-}
-
-@keyframes addedPulse {
-    0%   { transform: scale(1); }
-    50%  { transform: scale(1.15); }
-    100% { transform: scale(1); }
-}
-
-/* ---------- SEARCH ---------- */
-
-.is-searching {
-    opacity: 0.6;
-}
-
-/* ---------- CART BADGE ---------- */
-
-.has-items {
-    background-color: var(--color-green-700);
-    color: var(--color-paper);
+.search-result {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #eee;
 }
